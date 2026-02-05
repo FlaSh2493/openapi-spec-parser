@@ -1,5 +1,5 @@
 {
-  "name": "openapi-spec-parser",
+  "name": "@dotflash/openapi-spec-parser",
   "version": "0.1.0",
   "description": "Transform OpenAPI specs into AI agent-optimized rules",
   "type": "module",
