@@ -1,0 +1,4 @@
+# API Rules Index
+
+## Pet
+- POST /pets -> Pet/create-pet.md [req:Cat,res:PetResponse]

@@ -1,0 +1,79 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Test RuleSmith API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/pets": {
+      "post": {
+        "operationId": "createPet",
+        "tags": ["Pet"],
+        "summary": "Create a new pet",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cat"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PetResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "owner": { "$ref": "#/components/schemas/Owner" }
+        },
+        "required": ["id", "name"]
+      },
+      "Owner": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string", "format": "email" }
+        }
+      },
+      "Cat": {
+        "allOf": [
+          { "$ref": "#/components/schemas/Pet" },
+          {
+            "type": "object",
+            "properties": {
+              "huntingSkill": {
+                "type": "string",
+                "enum": ["clueless", "lazy", "adventurous", "lethal"]
+              }
+            }
+          }
+        ]
+      },
+      "PetResponse": {
+        "type": "object",
+        "properties": {
+          "pet": { "$ref": "#/components/schemas/Cat" },
+          "status": { "type": "string" }
+        }
+      }
+    }
+  }
+}
