@@ -1,6 +1,7 @@
 # openapi-spec-parser
 
-OpenAPI 명세를 AI 에이전트 최적화 규칙으로 변환하는 도구입니다.
+- OpenAPI 명세를 AI 에이전트 최적화 규칙으로 변환하는 도구입니다.
+- openapi-generator 등의 타입생성기로 생성한 타입을 제대로 참조하기 위해 제작되었습니다
 
 ## 특징
 
