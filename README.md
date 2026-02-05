@@ -56,6 +56,7 @@ output/
 
 ### [Rule: createPet]
 
+```
 #### 🎯 목적
 
 - Create a new pet
@@ -80,6 +81,9 @@ output/
   },
   "status": "string"
 }
+```
+
+
 ```
 
 ## 라이선스
