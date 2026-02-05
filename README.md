@@ -11,7 +11,9 @@ OpenAPI 명세를 AI 에이전트 최적화 규칙으로 변환하는 도구입�
 ## 설치
 
 ```bash
+pnpm install openapi-spec-parser
 npm install openapi-spec-parser
+yarn add openapi-spec-parser
 ```
 
 ## 사용법
