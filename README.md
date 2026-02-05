@@ -1,6 +1,8 @@
 # openapi-spec-parser
 
-OpenAPI 명세를 AI 에이전트 최적화 규칙으로 변환하는 도구입니다.
+Cursor나 Windsurf 같은 AI 에이전트에게 거대한 openapi.json을 통째로 넘기면, 토큰만 낭비될 뿐만 아니라 엉뚱한 코드를 생성하는 경우가 많습니다.<br>
+openapi-generator 등으로 생성된 타입을 AI가 정확히 참조하고, API 로직을 제대로 작성할 수 있도록 돕는 openapi-spec-parser를 만들었습니다.<br>
+이 도구는 API 명세를 파일 단위로 나누어 Rule 형식으로 제공하므로, 필요한 컨텍스트만 선택적으로 주입할 수 있다는 것이 특징입니다. <br>
 
 ## 특징
 
@@ -11,7 +13,9 @@ OpenAPI 명세를 AI 에이전트 최적화 규칙으로 변환하는 도구입�
 ## 설치
 
 ```bash
+pnpm install openapi-spec-parser
 npm install openapi-spec-parser
+yarn add openapi-spec-parser
 ```
 
 ## 사용법
@@ -49,10 +53,12 @@ output/
 
 ## 📄 규칙 파일 형식 (.md)
 
-각 API 규칙 파일은 에이전트가 코드를 즉시 작성할 수 있도록 정밀하게 구성됩니다:
+- 각 API 규칙 파일은 에이전트가 코드를 즉시 작성할 수 있도록 정밀하게 구성됩니다
+- 자세한 출력형식은 test 폴더를 참고하세요
 
 ### [Rule: createPet]
 
+```
 #### 🎯 목적
 
 - Create a new pet
@@ -79,6 +85,5 @@ output/
 }
 ```
 
-## 라이선스
 
-MIT
+```
